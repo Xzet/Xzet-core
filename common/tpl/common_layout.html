@@ -1,22 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="{Context::getLangType()}" xml:lang="{Context::getLangType()}" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="Generator" content="XpressEngine {__ZBXE_VERSION__}" />
-<!--@if($module_info->module)-->
-    <meta name="module" content="{$module_info->module}" />
-<!--@end-->
-<!--@if($module_info->skin)-->
-    <meta name="module_skin" content="{$module_info->skin}" />
-<!--@end-->
-<!--@if($layout_info->title)-->
-    <meta name="layout" content="{$layout_info->title} ({$layout_info->layout})" />
-<!--@end-->
-<!--@if($layout_info->author)-->
-    <!--@foreach($layout_info->author as $author)-->
-    <meta name="layout_maker" content="{$author->name} ({$author->homepage})" />
-    <!--@endforeach-->
-<!--@end-->
+    <meta name="Generator" content="XpressEngine" />
     <meta http-equiv="imagetoolbar" content="no" />
     <title>{Context::getBrowserTitle()}</title>
 {@ $css_files = Context::getCssFile() }
