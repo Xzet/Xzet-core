@@ -308,6 +308,8 @@
                 $filename = sprintf('%s.%s', md5($filename), $ext);
             }
 
+			if(!checkUploadedFile($source['tmp_name'])) return false;
+
             if(file_exists($path .'/'. $filename)) @unlink($path . $filename);
             if(!move_uploaded_file($source['tmp_name'], $path . $filename )) return false;
             return true;
@@ -482,7 +484,7 @@
             // check upload
             if(!Context::isUploaded()) exit();
             $file = Context::get('file');
-            if(!is_uploaded_file($file['tmp_name'])) exit();
+            if(!is_uploaded_file($file['tmp_name']) || !checkUploadedFile($file['tmp_name'])) exit();
             if(!preg_match('/\.(tar)$/i', $file['name'])) exit();
 
             $layout_srl = Context::get('layout_srl');

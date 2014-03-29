@@ -465,6 +465,9 @@
             // 디렉토리 생성
             if(!FileHandler::makeDir($path)) return new Object(-1,'msg_not_permitted_create');
 
+			// Check uploaded file
+			if(!checkUploadedFile($file_info['tmp_name']))  return new Object(-1,'msg_file_upload_error');
+
             // 파일 이동
             if($manual_insert) {
                 @copy($file_info['tmp_name'], $filename);

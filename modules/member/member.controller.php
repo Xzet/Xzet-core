@@ -801,6 +801,9 @@
         }
 
         function insertProfileImage($member_srl, $target_file) {
+
+			if(!checkUploadedFile($target_file)) return;
+
             $oModuleModel = &getModel('module');
             $config = $oModuleModel->getModuleConfig('member');
 
@@ -854,6 +857,9 @@
         }
 
         function insertImageName($member_srl, $target_file) {
+
+			if(!checkUploadedFile($target_file)) return;
+
             $oModuleModel = &getModel('module');
             $config = $oModuleModel->getModuleConfig('member');
 
@@ -950,6 +956,9 @@
         }
 
         function insertImageMark($member_srl, $target_file) {
+
+			if(!checkUploadedFile($target_file)) return;
+
             $oModuleModel = &getModel('module');
             $config = $oModuleModel->getModuleConfig('member');
 
