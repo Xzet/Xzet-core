@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="dispImporterAdminContent" type="view" standalone="true" admin_index="true" />
+
+        <action name="procImporterAdminImport" type="controller" standalone="true" />
+        <action name="procImporterAdminPreProcessing" type="controller" standalone="true" />
+
+        <action name="procImporterAdminSync" type="controller" standalone="true" />
+        <action name="procImporterAdminMemberImport" type="controller" standalone="true" />
+        <action name="procImporterAdminMessageImport" type="controller" standalone="true" />
+        <action name="procImporterAdminModuleImport" type="controller" standalone="true" />
+        <action name="procImporterAdminTTXMLImport" type="controller" standalone="true" />
+    </actions>
+</module>

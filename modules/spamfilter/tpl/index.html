@@ -1,0 +1,36 @@
+<!--%import("filter/insert_config.xml")-->
+
+<!--#include("header.html")-->
+
+<form action="./" method="get" onsubmit="return procFilter(this, insert_config)">
+
+    <table cellspacing="0" class="rowTable">
+    <tr>
+        <th scope="col"><div>{$lang->interval}</div></th>
+        <td>
+            <input type="text" name="interval" value="{$config->interval}" class="inputTypeText" /> {$lang->unit_sec}
+            <p>{$lang->about_interval}</p>
+        </td>
+    </tr>
+    <tr class="row2">
+        <th scope="col"><div>{$lang->limit_count}</div></th>
+        <td>
+            <input type="text" name="limit_count" value="{$config->limit_count?$config->limit_count:5}" class="inputTypeText" />
+            <p>{$lang->about_limit_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="col"><div>{$lang->check_trackback}</div></th>
+        <td>
+            <input type="checkbox" name="check_trackback" value="Y" <!--@if($config->check_trackback=='Y')-->checked="checked"<!--@end--> />
+            <p>{$lang->about_check_trackback}</p>
+        </td>
+    </tr>
+    <tr class="row2">
+        <th colspan="2" class="button">
+            <span class="button black strong"><input type="submit" value="{$lang->cmd_registration}" accesskey="s" /></span>
+        </th>
+    </tr>
+    </table>
+
+</form>

@@ -1,0 +1,19 @@
+<!--#include("header.html")-->
+
+<h2 class="xeAdmin">{$lang->introduce_title}</h2>
+
+<div id="agreement">{nl2br($lang->license)}</div>
+
+<div class="tCenter">
+    Select language : <select name="lang_type" onchange="doChangeLangType(this)">
+        <!--@foreach($lang_supported as $key => $val)-->
+        <option value="{$key}" <!--@if($key == $lang_type)-->selected="selected"<!--@end-->>{$val}</option>
+        <!--@end-->
+    </select>
+</div>
+
+<div class="tCenter gap1">
+    <a class="button blue" href="{getUrl('','act','dispInstallCheckEnv')}"><span>{$lang->cmd_agree_license}</span></a>
+</div>
+
+<!--#include("footer.html")-->

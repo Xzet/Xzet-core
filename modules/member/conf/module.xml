@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="dispMemberInfo" type="view" standalone="true" />
+        <action name="dispMemberSignUpForm" type="view" standalone="true" />
+        <action name="dispMemberModifyInfo" type="view" standalone="true" />
+        <action name="dispMemberModifyPassword" type="view" standalone="true" />
+        <action name="dispMemberLoginForm" type="view" standalone="true" />
+        <action name="dispMemberLogout" type="view" standalone="true" />
+        <action name="dispMemberLeave" type="view" standalone="true" />
+        <action name="dispMemberOpenIDLeave" type="view" standalone="true" />
+        <action name="dispMemberOwnDocument" type="view" standalone="true" />
+		<action name="dispMemberOwnComment" type="view" standalone="true" />
+        <action name="dispMemberScrappedDocument" type="view" standalone="true" />
+        <action name="dispMemberSavedDocument" type="view" standalone="true" />
+        <action name="dispMemberFindAccount" type="view" standalone="true" />
+        <action name="dispMemberGetTempPassword" type="view" standalone="true" />
+		<action name="dispMemberResendAuthMail" type="view" standalone="true" />
+        <action name="dispSavedDocumentList" type="view" standalone="true" />
+
+        <action name="dispMemberAdminList" type="view" standalone="true" index="true" admin_index="true" />
+        <action name="dispMemberAdminConfig" type="view" standalone="true" />
+        <action name="dispMemberAdminInsert" type="view" standalone="true" />
+        <action name="dispMemberAdminDeleteForm" type="view" standalone="true" />
+        <action name="dispMemberAdminGroupList" type="view" standalone="true" />
+        <action name="dispMemberAdminJoinFormList" type="view" standalone="true" />
+        <action name="dispMemberAdminInfo" type="view" standalone="true" />
+        <action name="dispMemberAdminInsertJoinForm" type="view" standalone="true" />
+        <action name="dispMemberAdminDeniedIDList" type="view" standalone="true" />
+        <action name="dispMemberAdminManageGroup" type="view" standalone="true" />
+        <action name="dispMemberAdminDeleteMembers" type="view" standalone="true" />
+
+        <action name="getMemberMenu" type="model" standalone="true" />
+        <action name="getMemberAdminColorset" type="model" standalone="true" />
+
+        <action name="procMemberLogin" type="controller" standalone="true" />
+        <action name="procMemberOpenIDLogin" type="controller" standalone="true" />
+        <action name="procMemberOpenIDValidate" type="controller" standalone="true" />
+        <action name="procModuleSiteSignUp" type="controller" standalone="true" />
+        <action name="procModuleSiteLeave" type="controller" standalone="true" />
+        <action name="procMemberAddOpenIDToMember" type="controller" standalone="true" />
+        <action name="procMemberValidateAddOpenIDToMember" type="controller" standalone="true" />
+        <action name="procMemberDeleteOpenIDFromMember" type="controller" standalone="true" />
+        <action name="procMemberLogout" type="controller" standalone="true" />
+        <action name="procMemberCheckValue" type="controller" standalone="true" />
+        <action name="procMemberInsert" type="controller" standalone="true" />
+        <action name="procMemberModifyInfoBefore" type="controller" />
+        <action name="procMemberModifyInfo" type="controller" standalone="true" />
+        <action name="procMemberModifyPassword" type="controller" standalone="true" />
+        <action name="procMemberLeave" type="controller" standalone="true" />
+        <action name="procMemberOpenIDLeave" type="controller" standalone="true" />
+        <action name="procMemberInsertProfileImage" type="controller" standalone="true" />
+        <action name="procMemberInsertImageName" type="controller" standalone="true" />
+        <action name="procMemberInsertImageMark" type="controller" standalone="true" />
+        <action name="procMemberDeleteProfileImage" type="controller" standalone="true" />
+        <action name="procMemberDeleteImageName" type="controller" standalone="true" />
+        <action name="procMemberDeleteImageMark" type="controller" standalone="true" />
+
+        <action name="procMemberScrapDocument" type="controller" standalone="true" />
+        <action name="procMemberDeleteScrap" type="controller" standalone="true" />
+        <action name="procMemberSaveDocument" type="controller" standalone="true" />
+        <action name="procMemberDeleteSavedDocument" type="controller" standalone="true" />
+
+        <action name="procMemberFindAccount" type="controller" standalone="true" />
+        <action name="procMemberFindAccountByQuestion" type="controller" standalone="true" />
+        <action name="procMemberAuthAccount" type="controller" standalone="true" />
+        <action name="procMemberUpdateAuthMail" type="controller" standalone="true" />
+		<action name="procMemberResendAuthMail" type="controller" standalone="true" />
+
+        <action name="procMemberAdminInsert" type="controller" standalone="true" />
+        <action name="procMemberAdminDelete" type="controller" standalone="true" />
+        <action name="procMemberAdminInsertConfig" type="controller" standalone="true" />
+        <action name="procMemberAdminInsertGroup" type="controller" standalone="true" />
+        <action name="procMemberAdminUpdateGroup" type="controller" standalone="true" />
+        <action name="procMemberAdminUpdateMembersGroup" type="controller" standalone="true" />
+        <action name="procMemberAdminDeleteMembers" type="controller" standalone="true" />
+        <action name="procMemberAdminInsertJoinForm" type="controller" standalone="true" />
+        <action name="procMemberAdminUpdateJoinForm" type="controller" standalone="true" />
+        <action name="procMemberAdminInsertDeniedID" type="controller" standalone="true" />
+        <action name="procMemberAdminUpdateDeniedID" type="controller" standalone="true" />
+        <action name="procMemberAdminUpdateGroupOrder" type="controller" standalone="true" />
+    </actions>
+</module>

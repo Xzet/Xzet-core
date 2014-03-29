@@ -1,0 +1,8 @@
+<query id="getModuleCategories" action="select">
+    <tables>
+        <table name="module_categories" />
+    </tables>
+    <navigation>
+        <index var="sort_index" default="title" order="asc" />
+    </navigation>
+</query>
