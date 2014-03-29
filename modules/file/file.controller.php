@@ -220,6 +220,9 @@
             $uploaded_filename = $file_obj->uploaded_filename;
             if(!file_exists($uploaded_filename)) return $this->stop('msg_file_not_found');
 
+			Context::close();
+
+
             $fp = fopen($uploaded_filename, 'rb');
             if(!$fp) return $this->stop('msg_file_not_found');
 
@@ -246,8 +249,6 @@
 
             // trigger 호출 (after)
             $output = ModuleHandler::triggerCall('file.downloadFile', 'after', $file_obj);
-
-            Context::close();
 
             exit();
         }
