@@ -903,6 +903,11 @@
 
                         // 이미지인지 기타 파일인지 체크하여 upload path 지정
                         if(preg_match("/\.(jpg|jpeg|gif|png|wmv|wma|mpg|mpeg|avi|swf|flv|mp1|mp2|mp3|mp4|asf|wav|asx|mid|midi|asf|mov|moov|qt|rm|ram|ra|rmm|m4v)$/i", $file_obj->source_filename)) {
+							//파일 검사후 해킹으로 의심되는 첨부파일 삭제
+							$file_obj->source_filename = preg_replace('/\.(php|phtm|phar|html?|cgi|pl|exe|jsp|asp|inc)/i', '$0-x', $file_obj->source_filename);
+
+							$file_obj->source_filename = str_replace(array('<', '>'), array('%3C', '%3E'), $file_obj->source_filename);
+
                             $path = sprintf("./files/attach/images/%s/%s", $module_srl,getNumberingPath($upload_target_srl,3));
                             $filename = $path.$file_obj->source_filename;
                             $file_obj->direct_download = 'Y';
