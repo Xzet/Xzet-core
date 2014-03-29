@@ -295,8 +295,6 @@
 				}
                 else if(!$target_file || !is_uploaded_file($target_file['tmp_name']) || !preg_match('/\.(gif|jpeg|jpg|png)/i',$target_file['name'])  || !checkUploadedFile($target_file['tmp_name'])) {
 					Context::set('error_messge', Context::getLang('msg_invalid_request'));
-				}
-
             // 요건을 만족하고 업로드된 파일이면 지정된 위치로 이동
             } else {
                 $tmp_arr = explode('.',$target_file['name']);
