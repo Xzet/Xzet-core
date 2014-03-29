@@ -20,6 +20,7 @@
             $stop_date = Context::get('stop_date');
             if($stop_date < date("Ymd")) $stop_date = date("YmdHis", time()+60*60*24*365);
 
+			$logged_info = Context::get('logged_info');
             $vars = Context::getRequestVars();
             foreach($vars as $key => $val) {
                 if(strpos($key,'tidx')) continue;
@@ -30,11 +31,8 @@
 
                 $poll_index = $tmp_arr[1];
 
-                if(Context::get('is_logged')) {
-                    $logged_info = Context::get('logged_info');
-                    // 세션에서 최고 관리자가 아니면 태그 제거
-                    if($logged_info->is_admin != 'Y') $val = htmlspecialchars($val);
-                }
+                // 세션에서 최고 관리자가 아니면 태그 제거
+                if($logged_info->is_admin != 'Y') $val = htmlspecialchars($val);
 
                 if($tmp_arr[0]=='title') $tmp_args[$poll_index]->title = $val;
                 else if($tmp_arr[0]=='checkcount') $tmp_args[$poll_index]->checkcount = $val;
@@ -53,7 +51,6 @@
             // 변수 설정
             $poll_srl = getNextSequence();
 
-            $logged_info = Context::get('logged_info');
             $member_srl = $logged_info->member_srl?$logged_info->member_srl:0;
 
             $oDB = &DB::getInstance();
