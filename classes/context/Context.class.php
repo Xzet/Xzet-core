@@ -505,6 +505,10 @@ class Context {
 	 * @return none
 	 **/
 	function setLang($code, $val) {
+		if(!isset($GLOBALS['lang']))
+                {
+                        $GLOBALS['lang'] = new stdClass();
+                }
 		$GLOBALS['lang']->{$code} = $val;
 	}
 

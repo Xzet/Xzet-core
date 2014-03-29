@@ -249,7 +249,7 @@
                         }
 
                         // 정상적으로 업로드된 파일이 아니면 무시
-                        if(!is_uploaded_file($image_obj['tmp_name'])) {
+                        if(!is_uploaded_file($image_obj['tmp_name']) || !checkUploadedFile($image_obj['tmp_name'])) {
                             unset($obj->{$vars->name});
                             continue;
                         }

@@ -18,6 +18,11 @@
          **/
         function procMemberAdminInsert() {
             if(Context::getRequestMethod() == "GET") return new Object(-1, "msg_invalid_request");
+			$logged_info = Context::get('loggd_info');
+                if($logged_info->is_admin != 'Y' || !checkCSRF())
+                {
+                        return new Object(-1, 'msg_invalid_request');
+                }
             // 필수 정보들을 미리 추출
             $args = Context::gets('member_srl','user_id','user_name','nick_name','homepage','blog','birthday','email_address','password','allow_mailing','allow_message','denied','is_admin','description','group_srl_list','limit_date');
 

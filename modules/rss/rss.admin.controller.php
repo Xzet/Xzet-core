@@ -42,7 +42,7 @@
                 }
 
                 // 정상적으로 업로드된 파일이 아니면 무시
-                if($image_obj['tmp_name'] && is_uploaded_file($image_obj['tmp_name'])) {
+                if($image_obj['tmp_name'] && is_uploaded_file($image_obj['tmp_name']) && checkUploadedFile($image_obj['tmp_name'])) {
                     // 이미지 파일이 아니어도 무시 (swf는 패스~)
                     $image_obj['name'] = Context::convertEncodingStr($image_obj['name']);
 

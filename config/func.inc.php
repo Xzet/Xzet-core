@@ -666,6 +666,18 @@
         return $content;
     }
 
+/**
+ * check uploaded file which may be hacking attempts
+ *
+ * @param string $file Taget file path
+ * @return bool
+ */
+function checkUploadedFile($file)
+{
+        require_once(_XE_PATH_ . 'classes/security/UploadFileFilter.class.php');
+        return UploadFileFilter::check($file);
+}
+
     /**
      * @brief xmp tag 확인 및 닫히지 않은 경우 추가
      **/

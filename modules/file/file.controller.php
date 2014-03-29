@@ -220,6 +220,9 @@
             $uploaded_filename = $file_obj->uploaded_filename;
             if(!file_exists($uploaded_filename)) return $this->stop('msg_file_not_found');
 
+			Context::close();
+
+
             $fp = fopen($uploaded_filename, 'rb');
             if(!$fp) return $this->stop('msg_file_not_found');
 
@@ -246,8 +249,6 @@
 
             // trigger 호출 (after)
             $output = ModuleHandler::triggerCall('file.downloadFile', 'after', $file_obj);
-
-            Context::close();
 
             exit();
         }
@@ -438,7 +439,7 @@
             // 이미지인지 기타 파일인지 체크하여 upload path 지정
             if(preg_match("/\.(jpe?g|gif|png|wm[va]|mpe?g|avi|swf|flv|mp[1-4]|as[fx]|wav|midi?|moo?v|qt|r[am]{1,2}|m4v)$/i", $file_info['name'])) {
                 // direct 파일에 해킹을 의심할 수 있는 확장자가 포함되어 있으면 바로 삭제함
-                $file_info['name'] = preg_replace('/\.(php|phtm|html?|cgi|pl|exe|jsp|asp|inc)/i', '$0-x',$file_info['name']);
+                $file_info['name'] = preg_replace('/\.(php|phtm|phar|html?|cgi|pl|exe|jsp|asp|inc)/i', '$0-x',$file_info['name']);
                 $file_info['name'] = str_replace(array('<','>'),array('%3C','%3E'),$file_info['name']);
 
                 $path = sprintf("./files/attach/images/%s/%s", $module_srl,getNumberingPath($upload_target_srl,3));
@@ -463,6 +464,9 @@
 
             // 디렉토리 생성
             if(!FileHandler::makeDir($path)) return new Object(-1,'msg_not_permitted_create');
+
+			// Check uploaded file
+			if(!checkUploadedFile($file_info['tmp_name']))  return new Object(-1,'msg_file_upload_error');
 
             // 파일 이동
             if($manual_insert) {
