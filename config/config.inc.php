@@ -5,14 +5,14 @@
      * @brief  기본적으로 사용하는 class파일의 include 및 환경 설정을 함
      **/
 
-if(version_compare(PHP_VERSION, '5.4.0', '<'))
-{
-	@error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING);
-}
-else
-{
-	@error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING ^ E_STRICT);
-}
+    if(version_compare(PHP_VERSION, '5.4.0', '<'))
+    {
+        @error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING);
+    }
+    else
+    {
+        @error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING ^ E_STRICT);
+    }
 
     if(!defined('__ZBXE__')) exit();
 
