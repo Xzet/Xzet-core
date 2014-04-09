@@ -113,6 +113,16 @@
             $receiver_args->readed = 'N';
             $receiver_args->regdate = date("YmdHis");
 
+            // Call a trigger (before)
+            $trigger_obj = new stdClass();
+            $trigger_obj->sender = $sender_args;
+            $trigger_obj->receiver = $receiver_args;
+            $trigger_output = ModuleHandler::triggerCall('communication.sendMessage', 'before', $trigger_obj);
+            if(!$trigger_output->toBool())
+            {
+            	return $trigger_output;
+            }
+
             $oDB = &DB::getInstance();
             $oDB->begin();
 
@@ -131,6 +141,14 @@
                 $oDB->rollback();
                 return $output;
             }
+            
+            // Call a trigger (after)
+		$trigger_output = ModuleHandler::triggerCall('communication.sendMessage', 'after', $trigger_obj);
+		if(!$trigger_output->toBool())
+		{
+			$oDB->rollback();
+			return $trigger_output;
+		}
 
             // 받는 회원의 쪽지 발송 플래그 생성 (파일로 생성)
             $flag_path = './files/member_extra_info/new_message_flags/'.getNumberingPath($receiver_srl);
