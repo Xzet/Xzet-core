@@ -78,7 +78,7 @@
             else print $output;
 
             // 출력 후 trigger 호출 (after)
-            ModuleHandler::triggerCall('display', 'after', $content);
+            ModuleHandler::triggerCall('display', 'after', $output);
         }
 
 
