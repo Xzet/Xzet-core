@@ -6,6 +6,9 @@ class UploadFileFilter
 
         public function check($file)
         {
+                // TODO: 기능개선후 enable
+                
+                return TRUE;
                 if (!$file || !file_exists($file)) return TRUE;
                 return self::_check($file);
         }
