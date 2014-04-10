@@ -134,7 +134,7 @@
                 Context::set('news','');
                 Context::set('released_version', '1.4.5.23');
                 Context::set('download_link', '');
-            }
+            //}
 
             // DB Information
             $db_info = Context::getDBInfo();
