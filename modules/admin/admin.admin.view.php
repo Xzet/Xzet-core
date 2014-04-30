@@ -105,7 +105,7 @@
          **/
         function dispAdminIndex() {
             //Retrieve recent news and set them into context
-            $newest_news_url = sprintf("http://news.xpressengine.com/%s/news.php", Context::getLangType());
+            /* $newest_news_url = sprintf("http://xzetnews.yjsoft.pe.kr/news.php?lang=%s", Context::getLangType());
             $cache_file = sprintf("%sfiles/cache/newest_news.%s.cache.php", _XE_PATH_,Context::getLangType());
             if(!file_exists($cache_file) || filemtime($cache_file)+ 60*60 < time()) {
                 // Considering if data cannot be retrieved due to network problem, modify filemtime to prevent trying to reload again when refreshing administration page
@@ -129,11 +129,12 @@
                         $obj->url = $val->attrs->url;
                         $news[] = $obj;
                     }
-                    Context::set('news', $news);
-                }
-                Context::set('released_version', $buff->zbxe_news->attrs->released_version);
-                Context::set('download_link', $buff->zbxe_news->attrs->download_link);
-            }
+                    
+                }*/
+                Context::set('news','');
+                Context::set('released_version', '1.4.5.23');
+                Context::set('download_link', '');
+            //}
 
             // DB Information
             $db_info = Context::getDBInfo();

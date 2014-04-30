@@ -254,24 +254,6 @@
 	</div>
 	<!--@end-->
 
-	<!--@if($news)-->
-    <div class="section">
-        <table>
-		<thead>
-			<th colspan="2">{$lang->newest_news}</th>
-		</thead>
-        <tbody>
-        <!--@foreach($news as $key => $val)-->
-        <tr>
-			<th><a href="{$val->url}" onclick="window.open(this.href);return false;" class="fl">{cut_str($val->title,36)}</a></th>
-            <td><span class="date fr">{zdate($val->date,"y-m-d")}</span></td>
-        </tr>
-        <!--@endforeach-->
-        </tbody>
-        </table>
-	</div>
-	<!--@endif-->
-
 	<div class="section">
 		<form id="fo_addon" action="./" method="get">
 			<input type="hidden" name="addon" value="" />

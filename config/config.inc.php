@@ -5,7 +5,15 @@
      * @brief  기본적으로 사용하는 class파일의 include 및 환경 설정을 함
      **/
 
-    @error_reporting(E_ALL ^ E_NOTICE);
+if(version_compare(PHP_VERSION, '5.4.0', '<'))
+{
+	@error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING);
+}
+else
+{
+	@error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING ^ E_STRICT);
+	//@error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
+}
 
     if(!defined('__ZBXE__')) exit();
 
@@ -16,7 +24,7 @@
      * @brief XE의 전체 버전 표기
      * 이 파일의 수정이 없더라도 공식 릴리즈시에 수정되어 함께 배포되어야 함
      **/
-    define('__ZBXE_VERSION__', '1.4.5.22');
+    define('__ZBXE_VERSION__', '1.4.5.23');
 
     /**
      * @brief zbXE가 설치된 장소의 base path를 구함

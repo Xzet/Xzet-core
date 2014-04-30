@@ -68,9 +68,14 @@
 
             // 쪽지 발송
             $output = $this->sendMessage($logged_info->member_srl, $receiver_srl, $title, $content);
+            
+            if(!$output->toBool())
+		{
+			return $output;
+		}
 
             // 메일로도 발송
-            if($output->toBool() && $send_mail == 'Y') {
+            if($send_mail == 'Y') {
                 $view_url = Context::getRequestUri();
                 $content = sprintf("%s<br /><br />From : <a href=\"%s\" target=\"_blank\">%s</a>",$content, $view_url, $view_url);
                 $oMail = new Mail();
@@ -113,6 +118,16 @@
             $receiver_args->readed = 'N';
             $receiver_args->regdate = date("YmdHis");
 
+            // Call a trigger (before)
+            $trigger_obj = new stdClass();
+            $trigger_obj->sender = $sender_args;
+            $trigger_obj->receiver = $receiver_args;
+            $trigger_output = ModuleHandler::triggerCall('communication.sendMessage', 'before', $trigger_obj);
+            if(!$trigger_output->toBool())
+            {
+            	return $trigger_output;
+            }
+
             $oDB = &DB::getInstance();
             $oDB->begin();
 
@@ -131,6 +146,14 @@
                 $oDB->rollback();
                 return $output;
             }
+            
+            // Call a trigger (after)
+		$trigger_output = ModuleHandler::triggerCall('communication.sendMessage', 'after', $trigger_obj);
+		if(!$trigger_output->toBool())
+		{
+			$oDB->rollback();
+			return $trigger_output;
+		}
 
             // 받는 회원의 쪽지 발송 플래그 생성 (파일로 생성)
             $flag_path = './files/member_extra_info/new_message_flags/'.getNumberingPath($receiver_srl);
