@@ -15,7 +15,7 @@ Xzet는 PHP로 작성한 설치형 CMS(Content Management System)인 XpressEngin
 @YJSoft
 
 ## Contribution Guide
-https://github.com/xpressengine/xe-core XE CORE 저장소의 `CONTRIBUTING.md`파일을 참고하세요.
+`CONTRIBUTING.md`파일을 참고하세요.
 
 ## License
 Original Copyright 2014 NAVER Corp. <http://www.navercorp.com>
