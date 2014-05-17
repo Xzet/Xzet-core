@@ -4,26 +4,26 @@
      * @author NHN (developers@xpressengine.com)
      * @brief 시작 페이지
      *
-     * Request Argument에서 mid, act로 module 객체를 찾아서 생성하고 \n
+     * Request Argument에서 mid, act로 module 객체를 찾아서 생성하고 
      * 모듈 정보를 세팅함
      *
      * @mainpage XpressEngine 
      * @section intro 소개
-     * XE 는 오픈 프로젝트로 개발되는 오픈 소스입니다.\n
+     * Xzet 는 오픈 프로젝트로 개발되는 오픈 소스인 XpressEngine 기반의 CMS입니다.
      * 자세한 내용은 아래 링크를 참조하세요.
-     * - 공식홈페이지        : http://www.xpressengine.com
-     * - SVN Repository      : http://svn.xpressengine.net/xe
-     * \n
-     * "XpressEngine (XE)" is free software; you can redistribute it and/or \n
-     * modify it under the terms of the GNU Lesser General Public \n
-     * License as published by the Free Software Foundation; either \n
-     * version 2.1 of the License, or (at your option) any later version. \n
-     * \n
+     * - 공식홈페이지        : http://xzet.yjsoft.pe.kr
+     * - SVN Repository      : https://github.com/Xzet/xe-core-14
+     * 
+     * "XpressEngine (XE)" is free software; you can redistribute it and/or 
+     * modify it under the terms of the GNU Lesser General Public 
+     * License as published by the Free Software Foundation; either 
+     * version 2.1 of the License, or (at your option) any later version. 
+     * 
      * This library is distributed in the hope that it will be useful,
      * but WITHOUT ANY WARRANTY; without even the implied warranty of
      * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
      * Lesser General Public License for more details.
-     * \n
+     * 
      * You should have received a copy of the GNU Lesser General Public
      * License along with this library; if not, write to the Free Software
      * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
