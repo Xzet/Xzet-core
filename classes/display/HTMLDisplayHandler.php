@@ -135,7 +135,7 @@ class HTMLDisplayHandler {
 
 	function _loadJSCSS()
 	{
-		$oContext =& Context::getInstance();
+		$oContext = Context::getInstance();
 		// add common JS/CSS files
 		$oContext->addJsFile('./common/js/jquery.js', false, '', -100000);
 		$oContext->addJsFile('./common/js/x.js', false, '', -100000);

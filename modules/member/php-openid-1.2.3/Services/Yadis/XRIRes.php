@@ -6,7 +6,7 @@ require_once 'Services/Yadis/XRI.php';
 class Services_Yadis_ProxyResolver {
     function Services_Yadis_ProxyResolver(&$fetcher, $proxy_url = null)
     {
-        $this->fetcher =& $fetcher;
+        $this->fetcher = $fetcher;
         $this->proxy_url = $proxy_url;
         if (!$this->proxy_url) {
             $this->proxy_url = Services_Yadis_getDefaultProxy();

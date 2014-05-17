@@ -320,7 +320,7 @@ class Auth_OpenID_Consumer {
                                            $this->consumer->fetcher);
 
         // Reset the 'stale' attribute of the manager.
-        $m =& $disco->getManager();
+        $m = $disco->getManager();
         if ($m) {
             $m->stale = false;
             $disco->session->set($disco->session_key,
@@ -414,7 +414,7 @@ class Auth_OpenID_DiffieHellmanConsumerSession {
 
     function getRequest()
     {
-        $math =& Auth_OpenID_getMathLib();
+        $math = Auth_OpenID_getMathLib();
 
         $cpub = $math->longToBase64($this->dh->public);
 
@@ -441,7 +441,7 @@ class Auth_OpenID_DiffieHellmanConsumerSession {
             return null;
         }
 
-        $math =& Auth_OpenID_getMathLib();
+        $math = Auth_OpenID_getMathLib();
         $spub = $math->base64ToLong($response['dh_server_public']);
         $enc_mac_key = base64_decode($response['enc_mac_key']);
 
@@ -517,7 +517,7 @@ class Auth_OpenID_GenericConsumer {
      */
     function Auth_OpenID_GenericConsumer(&$store)
     {
-        $this->store =& $store;
+        $this->store = $store;
         $this->_use_assocs =
             !(defined('Auth_OpenID_NO_MATH_SUPPORT') ||
               ($this->store && $this->store->isDumb()));

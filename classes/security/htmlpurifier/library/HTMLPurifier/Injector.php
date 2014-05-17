@@ -94,9 +94,9 @@ abstract class HTMLPurifier_Injector
         // dependency.
         $result = $this->checkNeeded($config);
         if ($result !== false) return $result;
-        $this->currentNesting =& $context->get('CurrentNesting');
-        $this->inputTokens    =& $context->get('InputTokens');
-        $this->inputIndex     =& $context->get('InputIndex');
+        $this->currentNesting = $context->get('CurrentNesting');
+        $this->inputTokens    = $context->get('InputTokens');
+        $this->inputIndex     = $context->get('InputIndex');
         return false;
     }
 

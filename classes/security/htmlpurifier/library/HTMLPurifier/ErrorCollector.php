@@ -26,10 +26,10 @@ class HTMLPurifier_ErrorCollector
     protected $lines = array();
 
     public function __construct($context) {
-        $this->locale    =& $context->get('Locale');
+        $this->locale    = $context->get('Locale');
         $this->context   = $context;
-        $this->_current  =& $this->_stacks[0];
-        $this->errors    =& $this->_stacks[0];
+        $this->_current  = $this->_stacks[0];
+        $this->errors    = $this->_stacks[0];
     }
 
     /**

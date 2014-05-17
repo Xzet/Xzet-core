@@ -32,7 +32,7 @@ function phorum_htmlpurifier_format($data)
 {
     $PHORUM = $GLOBALS["PHORUM"];
 
-    $purifier =& HTMLPurifier::getInstance();
+    $purifier = HTMLPurifier::getInstance();
     $cache_serial = $PHORUM['mod_htmlpurifier']['body_cache_serial'];
 
     foreach($data as $message_id => $message){
@@ -190,7 +190,7 @@ function phorum_htmlpurifier_posting($message) {
  */
 function phorum_htmlpurifier_quote($array) {
     $PHORUM = $GLOBALS["PHORUM"];
-    $purifier =& HTMLPurifier::getInstance();
+    $purifier = HTMLPurifier::getInstance();
     $text = $purifier->purify($array[1]);
     $source = htmlspecialchars($array[0]);
     return "<blockquote cite=\"$source\">\n$text\n</blockquote>";
@@ -238,7 +238,7 @@ function phorum_htmlpurifier_before_editor($message) {
             $body = $message['body'];
             // de-entity-ize contents
             $body = str_replace(array('&lt;','&gt;','&amp;'), array('<','>','&'), $body);
-            $purifier =& HTMLPurifier::getInstance();
+            $purifier = HTMLPurifier::getInstance();
             $body = $purifier->purify($body);
             // re-entity-ize contents
             $body = htmlspecialchars($body, ENT_QUOTES, $GLOBALS['PHORUM']['DATA']['CHARSET']);
@@ -272,7 +272,7 @@ function phorum_htmlpurifier_editor_after_subject() {
         <strong>HTML input</strong> is enabled. Make sure you escape all HTML and
         angled brackets with <code>&amp;lt;</code> and <code>&amp;gt;</code>.
     </p><?php
-            $purifier =& HTMLPurifier::getInstance();
+            $purifier = HTMLPurifier::getInstance();
             $config = $purifier->config;
             if ($config->get('AutoFormat.AutoParagraph')) {
                 ?><p>

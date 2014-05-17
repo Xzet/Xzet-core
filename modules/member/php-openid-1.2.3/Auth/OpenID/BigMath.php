@@ -391,7 +391,7 @@ function Auth_OpenID_detectMathLibrary($exts)
  * instance of a wrapper for that extension module.  If no extension
  * module is found, an instance of {@link Auth_OpenID_MathWrapper} is
  * returned, which wraps the native PHP integer implementation.  The
- * proper calling convention for this method is $lib =&
+ * proper calling convention for this method is $lib =
  * Auth_OpenID_getMathLib().
  *
  * This function checks for the existence of specific long number

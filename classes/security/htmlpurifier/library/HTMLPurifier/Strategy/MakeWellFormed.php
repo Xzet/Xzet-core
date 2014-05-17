@@ -65,9 +65,9 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
         $stack = array();
 
         // member variables
-        $this->stack   =& $stack;
-        $this->t       =& $t;
-        $this->tokens  =& $tokens;
+        $this->stack   = $stack;
+        $this->t       = $t;
+        $this->tokens  = $tokens;
         $this->config  = $config;
         $this->context = $context;
 

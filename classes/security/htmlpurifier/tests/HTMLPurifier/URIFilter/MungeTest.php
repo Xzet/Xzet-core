@@ -43,7 +43,7 @@ class HTMLPurifier_URIFilter_MungeTest extends HTMLPurifier_URIFilterHarness
         $this->setMunge('/r?embeds=%r&url=%s');
         $embeds = false;
         $this->context->register('EmbeddedURI', $embeds);
-        $this->assertFiltering('http://google.com', '/r?embeds=&url=http%3A%2F%2Fgoogle.com');
+        $this->assertFiltering('http://google.com', '/r?embeds=url=http%3A%2F%2Fgoogle.com');
     }
 
     function testMungeReplaceCSSProperty() {

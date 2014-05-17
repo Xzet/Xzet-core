@@ -55,7 +55,7 @@
             {
                 if($category->parent_srl)
                 {
-                    $categoryList[$category->parent_srl]->children[] =& $categoryList[$key];
+                    $categoryList[$category->parent_srl]->children[] = $categoryList[$key];
                 }
                 else
                 {
@@ -87,7 +87,7 @@
 
         function setDepth(&$item, $depth, &$list, &$resultList)
         {
-            $resultList[$item->category_srl] =& $item;
+            $resultList[$item->category_srl] = $item;
             $item->depth = $depth;
             $siblingList = $item->category_srl;
             foreach($item->children as $child)
@@ -175,7 +175,7 @@
 		{
 			$path_array = explode("/", $path);
             $target_name = array_pop($path_array);
-			$oModule =& getModule($target_name, "class");
+			$oModule = getModule($target_name, "class");
 			if(!$oModule) return false;	
 			if(method_exists($oModule, "moduleUninstall")) return true;
 			else return false;
