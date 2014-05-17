@@ -45,7 +45,7 @@
          * @brief 설치가 이상이 없는지 체크하는 method
          **/
         function checkUpdate() {
-            $oDB =& DB::getInstance();
+            $oDB = DB::getInstance();
             if(!file_exists(FileHandler::getRealPath("./modules/autoinstall/schemas/autoinstall_installed_packages.xml"))  
                 && $oDB->isTableExists("autoinstall_installed_packages"))
             {
@@ -64,7 +64,7 @@
          * @brief 업데이트 실행
          **/
         function moduleUpdate() {
-            $oDB =& DB::getInstance();
+            $oDB = DB::getInstance();
             if(!file_exists(FileHandler::getRealPath("./modules/autoinstall/schemas/autoinstall_installed_packages.xml"))  
                 && $oDB->isTableExists("autoinstall_installed_packages"))
             {

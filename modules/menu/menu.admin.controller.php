@@ -487,11 +487,11 @@
                 $group_srls = $node->group_srls;
 
                 if($normal_btn) {
-                    if(preg_match('/\.png$/',$normal_btn)) $classname = 'class=&quot;iePngFix&quot;';
+                    if(preg_match('/\.png$/',$normal_btn)) $classname = 'class=quot;iePngFix&quot;';
                     else $classname = '';
-                    if($hover_btn) $hover_str = sprintf('onmouseover=&quot;this.src=\'%s\'&quot;', $hover_btn); else $hover_str = '';
-                    if($active_btn) $active_str = sprintf('onmousedown=&quot;this.src=\'%s\'&quot;', $active_btn); else $active_str = '';
-                    $link = sprintf('&lt;img src=&quot;%s&quot; onmouseout=&quot;this.src=\'%s\'&quot; alt=&quot;<?php print htmlspecialchars($_names[$lang_type]) ?>&quot; %s %s %s /&gt;', $normal_btn, $normal_btn, $hover_str, $active_str, $classname);
+                    if($hover_btn) $hover_str = sprintf('onmouseover=quot;this.src=\'%s\'&quot;', $hover_btn); else $hover_str = '';
+                    if($active_btn) $active_str = sprintf('onmousedown=quot;this.src=\'%s\'&quot;', $active_btn); else $active_str = '';
+                    $link = sprintf('&lt;img src=quot;%s&quot; onmouseout=quot;this.src=\'%s\'&quot; alt=quot;<?php print htmlspecialchars($_names[$lang_type]) ?>&quot; %s %s %s /&gt;', $normal_btn, $normal_btn, $hover_str, $active_str, $classname);
                 } else {
                     $link = '<?php print $_names[$lang_type]; ?>';
                 }

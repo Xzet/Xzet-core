@@ -43,7 +43,7 @@ class boardMobile extends boardView {
 
 		function getBoardCommentPage() {
 			$document_srl = Context::get('document_srl');
-			$oDocumentModel =& getModel('document');
+			$oDocumentModel = getModel('document');
 			if(!$document_srl) return new Object(-1, "msg_invalid_request");
 			$oDocument = $oDocumentModel->getDocument($document_srl);
 			if(!$oDocument->isExists()) return new Object(-1, "msg_invalid_request");

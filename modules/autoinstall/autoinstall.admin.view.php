@@ -156,7 +156,7 @@
             $targetpackages = array();
             if($xmlDoc)
             {
-                $xmlPackage =& $xmlDoc->response->package;
+                $xmlPackage = $xmlDoc->response->package;
                 $package->package_srl = $xmlPackage->package_srl->body;
                 $package->title = $xmlPackage->title->body;
                 $package->package_description = $xmlPackage->package_description->body;
@@ -296,7 +296,7 @@
 		{
             $package_srl = Context::get('package_srl');
             if(!$package_srl) return $this->dispAutoinstallAdminIndex();
-			$oModel =& getModel('autoinstall');
+			$oModel = getModel('autoinstall');
 			$installedPackage = $oModel->getInstalledPackage($package_srl);
 			if(!$installedPackage) return $this->dispAutoinstallAdminInstalledPackages();
 

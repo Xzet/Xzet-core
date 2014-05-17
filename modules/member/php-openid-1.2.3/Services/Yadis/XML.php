@@ -304,7 +304,7 @@ $__Services_Yadis_defaultParser = null;
 function Services_Yadis_setDefaultParser(&$parser)
 {
     global $__Services_Yadis_defaultParser;
-    $__Services_Yadis_defaultParser =& $parser;
+    $__Services_Yadis_defaultParser = $parser;
 }
 
 function Services_Yadis_getSupportedExtensions()

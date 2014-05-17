@@ -5,7 +5,7 @@ class HTMLPurifier_Strategy_Composite_Test
 {
 
     public function __construct(&$strategies) {
-        $this->strategies =& $strategies;
+        $this->strategies = $strategies;
     }
 
 }

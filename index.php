@@ -7,7 +7,7 @@
      * Request Argument에서 mid, act로 module 객체를 찾아서 생성하고 
      * 모듈 정보를 세팅함
      *
-     * @mainpage XpressEngine 
+     * @mainpage Xzet 
      * @section intro 소개
      * Xzet 는 오픈 프로젝트로 개발되는 오픈 소스인 XpressEngine 기반의 CMS입니다.
      * 자세한 내용은 아래 링크를 참조하세요.

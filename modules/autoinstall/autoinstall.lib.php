@@ -12,7 +12,7 @@
 
 		function uninstall()
 		{
-			$oModel =& getModel('autoinstall');
+			$oModel = getModel('autoinstall');
 			$type = $oModel->getTypeFromPath($this->package->path); 
 			if($type == "module") {
 				$output = $this->uninstallModule();
@@ -62,7 +62,7 @@
 		{
             $path_array = explode("/", $this->package->path);
             $target_name = array_pop($path_array);
-			$oModule =& getModule($target_name, "class");
+			$oModule = getModule($target_name, "class");
 			if(!$oModule) return new Object(-1, 'msg_invalid_request');	
 			if(!method_exists($oModule, "moduleUninstall")) return new Object(-1, 'msg_invalid_request'); 
 
@@ -71,7 +71,7 @@
 
             $schema_dir = sprintf('%s/schemas/', $this->package->path);
             $schema_files = FileHandler::readDir($schema_dir);
-			$oDB =& DB::getInstance();
+			$oDB = DB::getInstance();
 			foreach($schema_files as $file)
 			{
 				$filename_arr = explode(".", $file);
@@ -177,7 +177,7 @@
 
         function SFTPModuleInstaller(&$package)
         {
-            $this->package =& $package;
+            $this->package = $package;
 			$this->ftp_info = Context::getFTPInfo();
         }
 
@@ -263,7 +263,7 @@
 
         function PHPFTPModuleInstaller(&$package)
         {
-            $this->package =& $package;
+            $this->package = $package;
 			$this->ftp_info = Context::getFTPInfo();
         }
 
@@ -391,7 +391,7 @@
 
         function FTPModuleInstaller(&$package)
         {
-            $this->package =& $package;
+            $this->package = $package;
             $this->ftp_info =  Context::getFTPInfo();
         }
 
@@ -451,7 +451,7 @@
 			$output = $this->_connect();
 			if(!$output->toBool()) return $output;
 
-			$oFtp =& $this->oFtp;
+			$oFtp = $this->oFtp;
             $target_dir = $this->ftp_info->ftp_root_path.$this->target_path;
 
             foreach($file_list as $k => $file){

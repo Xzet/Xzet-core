@@ -1372,7 +1372,7 @@
             $args->group_srl = $group_srl;
             if($site_srl) $args->site_srl = $site_srl;
 
-            $oModel =& getModel('member');
+            $oModel = getModel('member');
             $groups = $oModel->getMemberGroups($member_srl, $site_srl, true);
             if($groups[$group_srl]) return new Object();
 

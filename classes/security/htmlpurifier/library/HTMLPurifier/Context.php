@@ -26,7 +26,7 @@ class HTMLPurifier_Context
                           E_USER_ERROR);
             return;
         }
-        $this->_storage[$name] =& $ref;
+        $this->_storage[$name] = $ref;
     }
 
     /**

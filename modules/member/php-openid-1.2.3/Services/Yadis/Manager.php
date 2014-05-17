@@ -367,7 +367,7 @@ class Services_Yadis_Discovery {
                                       $session_key_suffix = null)
     {
         /// Initialize a discovery object
-        $this->session =& $session;
+        $this->session = $session;
         $this->url = $url;
         if ($session_key_suffix === null) {
             $session_key_suffix = $this->DEFAULT_SUFFIX;

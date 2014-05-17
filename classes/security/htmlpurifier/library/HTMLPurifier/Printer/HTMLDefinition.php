@@ -10,7 +10,7 @@ class HTMLPurifier_Printer_HTMLDefinition extends HTMLPurifier_Printer
 
     public function render($config) {
         $ret = '';
-        $this->config =& $config;
+        $this->config = $config;
 
         $this->def = $config->getHTMLDefinition();
 
@@ -251,7 +251,7 @@ class HTMLPurifier_Printer_HTMLDefinition extends HTMLPurifier_Printer
         $list = array();
         foreach ($array as $name => $obj) {
             if ($obj === false) continue;
-            $list[] = "$name&nbsp;=&nbsp;<i>" . $this->getClass($obj, 'AttrDef_') . '</i>';
+            $list[] = "$name&nbsp;=nbsp;<i>" . $this->getClass($obj, 'AttrDef_') . '</i>';
         }
         return $this->listify($list);
     }

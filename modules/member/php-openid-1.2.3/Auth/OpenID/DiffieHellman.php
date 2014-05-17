@@ -51,9 +51,9 @@ class Auth_OpenID_DiffieHellman {
                                        $private = null, $lib = null)
     {
         if ($lib === null) {
-            $this->lib =& Auth_OpenID_getMathLib();
+            $this->lib = Auth_OpenID_getMathLib();
         } else {
-            $this->lib =& $lib;
+            $this->lib = $lib;
         }
 
         if ($mod === null) {
@@ -121,7 +121,7 @@ class Auth_OpenID_DiffieHellman {
      */
     function serverAssociate($consumer_args, $assoc_secret)
     {
-        $lib =& Auth_OpenID_getMathLib();
+        $lib = Auth_OpenID_getMathLib();
 
         if (isset($consumer_args['openid.dh_modulus'])) {
             $mod = $lib->base64ToLong($consumer_args['openid.dh_modulus']);

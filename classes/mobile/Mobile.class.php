@@ -10,7 +10,7 @@ class Mobile {
 	}
 
 	function isFromMobilePhone() {
-		$oMobile =& Mobile::getInstance();
+		$oMobile = Mobile::getInstance();
 		return $oMobile->_isFromMobilePhone();
 	}
 
@@ -70,7 +70,7 @@ class Mobile {
 
 	function setMobile($ismobile)
 	{
-		$oMobile =& Mobile::getInstance();
+		$oMobile = Mobile::getInstance();
 		$oMobile->ismobile = $ismobile;
 	}
 }

@@ -972,7 +972,7 @@ function checkUploadedFile($file)
 		{
 			if($writer_member_srl)
 			{
-				$oMemberModel =& getModel('member');
+				$oMemberModel = getModel('member');
 				$member_info = $oMemberModel->getMemberInfoByMemberSrl($writer_member_srl);
 				if($member_info->is_admin == "Y")
 				{

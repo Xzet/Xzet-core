@@ -22,35 +22,35 @@ TODO
  * Convenience global functions. Corresponds to method on Debugger.
  */
 function paint($mixed) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->paint($mixed);
 }
 function paintIf($mixed, $conditional) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->paintIf($mixed, $conditional);
 }
 function paintWhen($mixed, $scopes = array()) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->paintWhen($mixed, $scopes);
 }
 function paintIfWhen($mixed, $conditional, $scopes = array()) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->paintIfWhen($mixed, $conditional, $scopes);
 }
 function addScope($id = false) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->addScope($id);
 }
 function removeScope($id) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->removeScope($id);
 }
 function resetScopes() {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->resetScopes();
 }
 function isInScopes($array = array()) {
-    $Debugger =& Debugger::instance();
+    $Debugger = Debugger::instance();
     return $Debugger->isInScopes($array);
 }
 /**#@-*/

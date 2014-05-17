@@ -186,12 +186,12 @@
                 $logged_info = Context::get('logged_info');
                 if($logged_info->is_admin != 'Y') {
 
-                    $oModuleModel =& getModel('module');
+                    $oModuleModel = getModel('module');
                     $module_info = $oModuleModel->getModuleInfoByModuleSrl($file_obj->module_srl);
 
                     if(!$oModuleModel->isSiteAdmin($logged_info, $module_info->site_srl))
                     {
-                        $oMemberModel =& getModel('member');
+                        $oMemberModel = getModel('member');
                         $member_groups = $oMemberModel->getMemberGroups($logged_info->member_srl, $module_info->site_srl);
 
                         $is_permitted = false;

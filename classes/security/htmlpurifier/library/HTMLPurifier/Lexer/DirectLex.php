@@ -71,7 +71,7 @@ class HTMLPurifier_Lexer_DirectLex extends HTMLPurifier_Lexer
 
         $e = false;
         if ($config->get('Core.CollectErrors')) {
-            $e =& $context->get('ErrorCollector');
+            $e = $context->get('ErrorCollector');
         }
 
         // for testing synchronization
@@ -346,7 +346,7 @@ class HTMLPurifier_Lexer_DirectLex extends HTMLPurifier_Lexer
 
         $e = false;
         if ($config->get('Core.CollectErrors')) {
-            $e =& $context->get('ErrorCollector');
+            $e = $context->get('ErrorCollector');
         }
 
         // let's see if we can abort as quickly as possible

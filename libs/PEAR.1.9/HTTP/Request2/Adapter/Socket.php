@@ -283,14 +283,14 @@ class HTTP_Request2_Adapter_Socket extends HTTP_Request2_Adapter
         if ($keepAlive && !empty(self::$sockets[$socketKey]) &&
             !feof(self::$sockets[$socketKey])
         ) {
-            $this->socket =& self::$sockets[$socketKey];
+            $this->socket = self::$sockets[$socketKey];
 
         } elseif ($secure && $proxy && !$tunnel) {
             $this->establishTunnel();
             $this->request->setLastEvent(
                 'connect', "ssl://{$reqHost}:{$reqPort} via {$host}:{$port}"
             );
-            self::$sockets[$socketKey] =& $this->socket;
+            self::$sockets[$socketKey] = $this->socket;
 
         } else {
             // Set SSL context options if doing HTTPS request or creating a tunnel
@@ -313,7 +313,7 @@ class HTTP_Request2_Adapter_Socket extends HTTP_Request2_Adapter
                 );
             }
             $this->request->setLastEvent('connect', $remote);
-            self::$sockets[$socketKey] =& $this->socket;
+            self::$sockets[$socketKey] = $this->socket;
         }
         return $keepAlive;
     }
@@ -515,7 +515,7 @@ class HTTP_Request2_Adapter_Socket extends HTTP_Request2_Adapter
                 // probably credentials are invalid
                 $ret = false;
             }
-            self::$challenges[$prefix] =& $challenge;
+            self::$challenges[$prefix] = $challenge;
         }
         return $ret;
     }
@@ -735,7 +735,7 @@ class HTTP_Request2_Adapter_Socket extends HTTP_Request2_Adapter
                             $auth['user'], $auth['password'],
                             $requestUrl, self::$challenges[$key]
                         );
-                        $this->serverChallenge =& self::$challenges[$key];
+                        $this->serverChallenge = self::$challenges[$key];
                         break;
                     }
                 }
@@ -781,7 +781,7 @@ class HTTP_Request2_Adapter_Socket extends HTTP_Request2_Adapter
                         $user, $password,
                         $requestUrl, self::$challenges[$proxyUrl]
                     );
-                    $this->proxyChallenge =& self::$challenges[$proxyUrl];
+                    $this->proxyChallenge = self::$challenges[$proxyUrl];
                 }
                 break;
 
