@@ -697,7 +697,7 @@ class Auth_OpenID_CheckIDRequest extends Auth_OpenID_Request {
                                   in immediate mode.');
                 }
 
-                $setup_request =& new Auth_OpenID_CheckIDRequest(
+                $setup_request = new Auth_OpenID_CheckIDRequest(
                                                 $this->identity,
                                                 $this->return_to,
                                                 $this->trust_root,
