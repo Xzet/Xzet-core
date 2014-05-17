@@ -1238,10 +1238,10 @@ class Auth_OpenID_UntrustedReturnURL extends Auth_OpenID_ServerError {
 class Auth_OpenID_Server {
     function Auth_OpenID_Server(&$store)
     {
-        $this->store =& $store;
-        $this->signatory =& new Auth_OpenID_Signatory($this->store);
-        $this->encoder =& new Auth_OpenID_SigningEncoder($this->signatory);
-        $this->decoder =& new Auth_OpenID_Decoder();
+        $this->store = $store;
+        $this->signatory = new Auth_OpenID_Signatory($this->store);
+        $this->encoder = new Auth_OpenID_SigningEncoder($this->signatory);
+        $this->decoder = new Auth_OpenID_Decoder();
     }
 
     /**
