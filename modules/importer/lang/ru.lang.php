@@ -56,7 +56,7 @@
     $lang->about_ttxml_user_id = 'Введите ID указанного пользователя, сделавшего запись при импортировании данных TTXML. (Пользователь должен быть зарегистрирован)';
     $lang->about_type_module = 'Если Вы импортируете информацию форума или записей, выберите эту опцию';
     $lang->about_type_syncmember = 'Если Вы пытаетесь синхронизировать информацию пользователей после импорта информации пользователей и записей, выберите эту опцию';
-    $lang->about_importer = "Вы можете импортировать данные Zeroboard4, Zeroboard5 Beta или других программ в XE.\nЧтобы импортировать, Вам следует использовать <a href=\"http://svn.xpressengine.com/zeroboard_xe/migration_tools/\" onclick=\"winopen(this.href);return false;\">XML Экспортер (XML Exporter)</a>, чтобы конвертировать нужные данные в XML Файл и затем загрузить его.";
+    $lang->about_importer = "Вы можете импортировать данные Zeroboard4, Zeroboard5 Beta или других программ в XE.\nЧтобы импортировать, Вам следует использовать <a href=\"https://github.com/xpressengine/xe-migration-tool/\" onclick=\"winopen(this.href);return false;\">XML Экспортер (XML Exporter)</a>, чтобы конвертировать нужные данные в XML Файл и затем загрузить его.";
 
     $lang->about_target_path = "Чтобы получить вложения с Zeroboard4, пожалуйста, введите адрес, где установлена  Zeroboard4.\nЕсли она раположена на том же сервере, введите путь к Zeroboard4 как /home/USERID/public_html/bbs\nЕсли нет, введите адрес, где Zeroboard4 установлена. Например: http://Domain/bbs";
 ?>

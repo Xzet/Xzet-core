@@ -56,7 +56,7 @@
 	$lang->about_ttxml_user_id = 'Please input user ID to set as author of TTXML data. (user ID must be already signed up)';
     $lang->about_type_module = 'If you are to import article data, please select this option';
     $lang->about_type_syncmember = 'If you are to import and synchronize member and article data, please select this option';
-    $lang->about_importer = "Data Importer will help you import Zeroboard4, Zeroboard5 Beta or other program's data into XE.\nIn order to import, you first have to use <a href=\"http://svn.xpressengine.net/migration/\" onclick=\"winopen(this.href);return false;\">XML Exporter</a> to convert the data you want into XML File.";
+    $lang->about_importer = "Data Importer will help you import Zeroboard4, Zeroboard5 Beta or other program's data into XE.\nIn order to import, you first have to use <a href=\"https://github.com/xpressengine/xe-migration-tool/\" onclick=\"winopen(this.href);return false;\">XML Exporter</a> to convert the data you want into XML File.";
 
     $lang->about_target_path = "To get attachments from Zeroboard4, please input the path where Zeroboard4 is installed.\nIf it is located in the same server, please input Zeroboard4's path such as /home/USERID/public_html/bbs\nIf not, please input the address where Zeroboard4 is installed. ex. http://Domain/bbs";
 ?>
