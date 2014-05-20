@@ -56,7 +56,7 @@
 	$lang->about_ttxml_user_id = 'Lütfen TTXML veri yazarı atamak için kullanıcı kimliği(ID) giriniz. (kullanıcı kimliği, kayıtlı kullanıcıya ait olmalıdır)';
     $lang->about_type_module = 'Eğer makale verisi içe aktaracaksanız, lütfen bu seçeneği seçiniz';
     $lang->about_type_syncmember = 'Eğer üye ve makale verisi içe aktarıp senkronize edecekseniz, lütfen bu seçeneği seçiniz';
-    $lang->about_importer = "Veri Alıcısı XE'ye, Zeroboard4, Zeroboard5 Beta veya başka programların verilerini aktarmada yardımcı olacaktır.\nİçe aktarımı gerçekleştirebilmek için öncelikle <a href=\"http://svn.xpressengine.net/migration/\" onclick=\"winopen(this.href);return false;\">XML DışAktarımcı</a>'yı kullanıp istediğiniz veriyi XML türüne çevirmelisiniz.";
+    $lang->about_importer = "Veri Alıcısı XE'ye, Zeroboard4, Zeroboard5 Beta veya başka programların verilerini aktarmada yardımcı olacaktır.\nİçe aktarımı gerçekleştirebilmek için öncelikle <a href=\"https://github.com/xpressengine/xe-migration-tool/\" onclick=\"winopen(this.href);return false;\">XML DışAktarımcı</a>'yı kullanıp istediğiniz veriyi XML türüne çevirmelisiniz.";
 
     $lang->about_target_path = "Zeroboard4\'ten ekler almak için, Zeroboard4\'ün kurulu olduğu yolu giriniz.\nEğer aynı sunucuda konumlandırılmışsa, lütfen Zeroboard4\'ün yolunu bu şekilde giriniz : /home/USERID/public_html/bbs\nEğer aynı sunucuda değilse, lütfen Zeroboard4\'ün kurulu olduğu adresi giriniz. örn. http://Domain/bbs";
 ?>
