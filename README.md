@@ -14,6 +14,9 @@ Xzet는 PHP로 작성한 설치형 CMS(Content Management System)인 XpressEngin
 ## Maintainers
 @YJSoft
 
+## Committer
+@dorami
+
 ## Contribution Guide
 `CONTRIBUTING.md`파일을 참고하세요.
 
