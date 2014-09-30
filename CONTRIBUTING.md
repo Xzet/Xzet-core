@@ -25,4 +25,5 @@ Issue 작성 시 참고해주세요.
 * class 선언과 function, if, foreach, for, while 등 중괄호의 `{}`는 다음 줄에 있어야 합니다
 	* 마찬가지로 선언 다음에는 공백을 두지 않습니다. ex) CORRECT `if(...)`, INCORRECT `if (...)`
 * **Coding convention에 맞지 않는 코드를 발견 하더라도 목적과 관계 없는 코드는 절대 고치지 마세요**
-* 가이드라인에 맞지 않는 PR은 close될 수 있습니다
+* 가이드라인에 맞지 않는 PR은 close될 수 있습니다.
+* 기능 추가, 기존 기능 변경 관련 PR은 close될 수 있습니다.
