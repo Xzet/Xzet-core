@@ -694,26 +694,50 @@ class Context {
 	}
 
 	/**
-	 * @brief Filter request variable
-	 * @param[in] $key variable key
-	 * @param[in] $val variable value
-	 * @param[in] $do_stripslashes whether to strip slashes
-	 * @remarks cast variables, such as _srl, page, and cpage, into interger
-	 * @return filtered value
-	 **/
-	function _filterRequestVar($key, $val, $do_stripslashes = 1) {
-		if( ($key == "page" || $key == "cpage" || substr($key,-3)=="srl")) return !preg_match('/^[0-9,]+$/',$val)?(int)$val:$val;
-		if(is_array($val) && count($val) ) {
-			foreach($val as $k => $v) {
-				if($do_stripslashes && version_compare(PHP_VERSION, "5.9.0", "<") && get_magic_quotes_gpc()) $v = stripslashes($v);
-				$v = trim($v);
-				$val[$k] = $v;
-			}
-		} else {
-			if($do_stripslashes && version_compare(PHP_VERSION, "5.9.0", "<") && get_magic_quotes_gpc()) $val = stripslashes($val);
-			$val = trim($val);
+	 * Filter request variable
+	 *
+	 * @see Cast variables, such as _srl, page, and cpage, into interger
+	 * @param string $key Variable key
+	 * @param string $val Variable value
+	 * @param string $do_stripslashes Whether to strip slashes
+	 * @return mixed filtered value. Type are string or array
+	 */
+	function _filterRequestVar($key, $val, $do_stripslashes = 1)
+	{
+		if(!($isArray = is_array($val)))
+		{
+			$val = array($val);
 		}
-		return $val;
+
+		$result = array();
+		foreach($val as $k => $v)
+		{
+			$k = htmlentities($k);
+			if($key === 'page' || $key === 'cpage' || substr_compare($key, 'srl', -3) === 0)
+			{
+				$result[$k] = !preg_match('/^[0-9,]+$/', $v) ? (int) $v : $v;
+			}
+			elseif($key === 'mid' || $key === 'vid' || $key === 'search_keyword')
+			{
+				$result[$k] = htmlspecialchars($v, ENT_COMPAT | ENT_HTML401, 'UTF-8', FALSE);
+			}
+			else
+			{
+				$result[$k] = $v;
+
+				if($do_stripslashes && version_compare(PHP_VERSION, '5.9.0', '<') && get_magic_quotes_gpc())
+				{
+					$result[$k] = stripslashes($result[$k]);
+				}
+
+				if(!is_array($result[$k]))
+				{
+					$result[$k] = trim($result[$k]);
+				}
+			}
+		}
+
+		return $isArray ? $result : $result[0];
 	}
 
 	/**
