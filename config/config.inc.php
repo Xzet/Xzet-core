@@ -24,7 +24,7 @@ else
      * @brief XE의 전체 버전 표기
      * 이 파일의 수정이 없더라도 공식 릴리즈시에 수정되어 함께 배포되어야 함
      **/
-    define('__ZBXE_VERSION__', '1.4.5.24.beta1');
+    define('__ZBXE_VERSION__', '1.4.5.24.beta2');
 
     /**
      * @brief zbXE가 설치된 장소의 base path를 구함
@@ -49,7 +49,6 @@ else
      * define('__OB_GZHANDLER_ENABLE__', 1);
      * define('__ENABLE_PHPUNIT_TEST__', 0);
      * define('__PROXY_SERVER__', 'http://domain:port/path');
-     * ?>
      */
     if(file_exists(_XE_PATH_.'config/config.user.inc.php')) {
         require _XE_PATH_.'config/config.user.inc.php';
