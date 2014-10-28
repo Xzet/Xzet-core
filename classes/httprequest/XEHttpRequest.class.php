@@ -5,6 +5,7 @@
      * @version 0.1
      * @brief a class that is designed to be used for sending out HTTP request to an external server and retrieving response
      * @remarks  Connection: keep-alive is not supported
+	 * @deprecated
      */
     class XEHttpRequest {
 
